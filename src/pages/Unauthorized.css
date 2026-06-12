@@ -1,0 +1,25 @@
+.panelcontenido{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 100px;
+}
+
+.btn{
+  background: black;
+  border-radius: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: #fff;
+  transition: color 0.2s;
+  padding: 20px;
+  text-decoration: none;
+}
+
+.action-btn:hover { 
+    color: #3b82f6; 
+}

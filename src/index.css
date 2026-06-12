@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.barra{
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+  background: #111;
+  color: white;
+}
+
+.cajalogin{
+  max-width: 400px;
+  margin: 50px auto;
+}
+
+.error{
+  color: red;
+  font-weight: bold;
+}
+
+.panelcontenido{
+  padding: 30px;
+}
