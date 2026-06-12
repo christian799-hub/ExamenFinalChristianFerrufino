@@ -8,6 +8,8 @@ import { productoService } from '../services/productoService';
 import { facturaService } from '../services/facturaService';
 
 
+// TESTEOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+
 export default function Facturar() {
   // --- CLIENTE ---
   const [nit, setNit] = useState("");
