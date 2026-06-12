@@ -1,5 +1,5 @@
 import logoFerreteria from '../assets/Logo2.png'; 
-
+import './Menu.css';
 
 const Menu = () => {
   return (
