@@ -12,7 +12,7 @@ export const productoService = {
       return JSON.parse(rawText) as ApiResponse<Producto[]>;
     } catch (error) {
       console.error("Error crudo del servidor:", rawText);
-      throw new Error("El servidor devolvió un error al cargar los productos.");
+      throw new Error("El servidor devolvio un error al cargar los productos.");
     }
   },
   

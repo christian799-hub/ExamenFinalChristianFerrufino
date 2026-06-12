@@ -42,7 +42,6 @@ const ListaFacturas = () => {
     if (!confirmar) return;
 
     try {
-      // ¡Usamos el servicio en lugar de hacer el fetch manual!
       const result = await facturaService.anular(id);
 
       if (result.success) {
@@ -63,9 +62,7 @@ const ListaFacturas = () => {
 
   // Editar Facturas
 
-// --- FUNCIÓN ABRIR EDICIÓN ---
   const handleEditar = (fila: any) => {
-    // Llenamos el modal con los datos actuales y lo abrimos
     setFacturaSeleccionada(fila);
     setEditNit(fila.nit);
     setEditRazonSocial(fila.razonSocial);
@@ -76,14 +73,12 @@ const ListaFacturas = () => {
   const handleGuardarEdicion = async () => {
     if (!facturaSeleccionada) return;
 
-    // Preparamos el payload solo con lo que tu backend necesita para modificar
     const payloadModificar = {
       accion: 'modificar' as const,
       id: facturaSeleccionada.id,
       cliente: {
         nit: editNit,
         razonSocial: editRazonSocial,
-        // Mandamos los demás datos como estaban para que no se borren en BD
         tipoDoc: facturaSeleccionada.tipoDoc || 1, 
         correo: facturaSeleccionada.correo || '',
         metodoPago: facturaSeleccionada.metodoPago || 1
@@ -99,7 +94,6 @@ const ListaFacturas = () => {
 
       if (result.success) {
         alert("Factura actualizada correctamente.");
-        // Actualizamos la tabla visualmente sin recargar
         setFacturas(prevFacturas => 
           prevFacturas.map(f => 
             f.id === facturaSeleccionada.id 
@@ -107,7 +101,7 @@ const ListaFacturas = () => {
               : f
           )
         );
-        setModalAbierto(false); // Cerramos el modal
+        setModalAbierto(false); 
       } else {
         alert("No se pudo actualizar: " + result.message);
       }
@@ -130,7 +124,41 @@ const ListaFacturas = () => {
   return (
     <>
       <Helmet>
+
         <title>Lista de Facturas Ferretería América</title>
+
+        <meta
+          name="description"
+          content="Lista de Facturacion Ferreteria America."
+        />
+
+        <meta
+          name="keywords"
+          content="React, JavaScript, frontend, desarrollo web, facturacion, Ferreteria, Lista Facturacion"
+        />
+
+        <meta
+          name="author"
+          content="Christian Ferrufino"
+        />
+
+        {/* Open Graph */}
+
+        <meta
+          property="og:title"
+          content="Lista Facturacion Ferretería America"
+        />
+
+        <meta
+          property="og:description"
+          content="Facturas de la Ferreteria America."
+        />
+
+        <meta
+          property="og:type"
+          content="website"
+        />
+        
       </Helmet>
 
       <div className="page-container">

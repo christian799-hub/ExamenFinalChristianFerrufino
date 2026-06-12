@@ -1,8 +1,12 @@
+import { Helmet } from 'react-helmet-async';
 import './NotFound.css'; 
 
 const NotFoundPage = () => {
   return (
     <>
+    <Helmet>
+      <title>NOT FOUND</title>
+    </Helmet>
     <div className="panelcontenido">
       <h1>404</h1>
     </div>

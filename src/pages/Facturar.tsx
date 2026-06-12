@@ -93,13 +93,13 @@ export default function Facturar() {
 
   const totalFactura = cart.reduce((sum, item) => sum + item.total, 0);
 
-  // Envío controlado de datos de facturación
+  // Envio datos de facturación
   const handleFacturarSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!nit || !razonSocial || !tipoDoc || !metodoPago) return;
     
     if (cart.length === 0) {
-      alert("Debe agregar al menos un artículo para poder facturar.");
+      alert("Debe agregar al menos un articulo para poder facturar.");
       return;
     }
 
@@ -135,7 +135,40 @@ export default function Facturar() {
   return (
     <>
       <Helmet>
-        <title>Facturar | Ferretería América</title>
+        <title>Facturar Ferretería América</title>
+
+          <meta
+          name="description"
+          content="Facturacion Ferreteria America."
+        />
+
+        <meta
+          name="keywords"
+          content="React, JavaScript, frontend, desarrollo web, facturacion, Ferreteria"
+        />
+
+        <meta
+          name="author"
+          content="Christian Ferrufino"
+        />
+
+        {/* Open Graph */}
+
+        <meta
+          property="og:title"
+          content="Facturar Ferretería América"
+        />
+
+        <meta
+          property="og:description"
+          content="Facturacion Ferreteria America."
+        />
+
+        <meta
+          property="og:type"
+          content="website"
+        />
+        
       </Helmet>
 
       <form className="facturacion-container" onSubmit={handleFacturarSubmit}>
@@ -216,7 +249,7 @@ export default function Facturar() {
                   <div className="no-products-found">No se encontraron productos coincidentes.</div>
                 )}
               </div>
-            ) : (<div className="empty-search-placeholder">Escriba o escanee en el buscador superior para ver información de productos.</div>
+            ) : (<div className="empty-search-placeholder">Escriba o escanee en el buscador superior para ver informacion de productos.</div>
             )}
           </div>
 
@@ -254,7 +287,7 @@ export default function Facturar() {
                   ))}
                   {cart.length === 0 && (
                     <tr>
-                      <td colSpan={6} className="empty-cart-msg">No hay artículos seleccionados en el resumen.</td>
+                      <td colSpan={6} className="empty-cart-msg">No hay articulos seleccionados en el resumen.</td>
                     </tr>
                   )}
                 </tbody>

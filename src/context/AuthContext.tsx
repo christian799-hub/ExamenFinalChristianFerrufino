@@ -1,8 +1,7 @@
 // src/context/AuthContext.tsx
 import { createContext, useContext, useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
-import type { User, LoginResponse } from '../types/auth'; // Tus interfaces originales
- // Tus interfaces originales
+import type { User, LoginResponse } from '../types/auth'; 
 
 interface AuthContextProps {
   user: User | null;
@@ -17,7 +16,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
-  // Verifica si hay una sesión activa al arrancar la aplicación
+  // Verifica sesion activa
   useEffect(() => {
     const verificarSesion = () => {
       const token = localStorage.getItem('auth_token');
@@ -32,13 +31,13 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
           localStorage.removeItem('auth_user');
         }
       }
-      setLoading(false); // Finaliza la carga inicial
+      setLoading(false); 
     };
 
     verificarSesion();
   }, []);
 
-  // Función para iniciar sesión conectada a tu PHP
+  // Fetch login
   const login = async (usuario: string, password: string) => {
     try {
       const response = await fetch("https://backendexamentecweb2.onrender.com/login.php", {
@@ -56,7 +55,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       if (data.success && data.token) {
         localStorage.setItem('auth_token', data.token);
         localStorage.setItem('auth_user', JSON.stringify(data.user));
-        setUser(data.user); // Guardamos reactivamente el usuario
+        setUser(data.user); 
         return { success: true };
       } else {
         return { success: false, message: data.message || 'Credenciales incorrectas' };
@@ -66,11 +65,11 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
-  // Función para cerrar sesión
+  // Funcion  cerrar sesión
   const logout = () => {
     localStorage.removeItem('auth_token');
     localStorage.removeItem('auth_user');
-    setUser(null); // Al pasar a null, toda la app reacciona y se protege
+    setUser(null); 
   };
 
   return (
@@ -80,5 +79,4 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-// Hook personalizado para usar la autenticación de forma limpia
 export const useAuth = () => useContext(AuthContext);

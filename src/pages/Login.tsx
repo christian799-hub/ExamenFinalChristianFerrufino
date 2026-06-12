@@ -35,7 +35,40 @@ const handleSubmit = async (e: React.FormEvent) => {
   return (
     <>
       <Helmet>
+
         <title>Login Ferreteria America</title>
+
+        <meta
+          name="description"
+          content="Login Ferreteria America."
+        />
+
+        <meta
+          name="keywords"
+          content="React, JavaScript, frontend, desarrollo web, facturacion, Ferreteria, Login"
+        />
+
+        <meta
+          name="author"
+          content="Christian Ferrufino"
+        />
+
+        {/* Open Graph */}
+
+        <meta
+          property="og:title"
+          content="Login Ferretería America"
+        />
+
+        <meta
+          property="og:description"
+          content="Login Ferreteria America."
+        />
+
+        <meta
+          property="og:type"
+          content="website"
+        />
       </Helmet>
 
       <div className="login-pagina">

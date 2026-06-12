@@ -1,5 +1,3 @@
-/* src/components/Facturar.css */
-
 .facturacion-container {
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   padding: 10px;
@@ -8,50 +6,7 @@
   box-sizing: border-box;
 }
 
-/* BARRA SUPERIOR DE ESTADOS */
-.sistema-estado-barra {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  background-color: #ffffff;
-  padding: 8px 24px;
-  border-radius: 12px;
-  align-items: center;
-  justify-content: space-between;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-  margin-bottom: 10px;
-}
-
-.item-estado { display: flex; gap: 8px; font-size: 13px; }
-.estado-label { color: #64748b; font-weight: 500; }
-.estado-value.read-only-db { color: #1e293b; font-weight: 600; }
-.estado-grupo-derecho { display: flex; align-items: center; gap: 16px; }
-
-.connection-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 600;
-}
-.connection-badge .dot { width: 8px; height: 8px; border-radius: 50%; }
-.connection-badge.online { background-color: #d1fae5; color: #065f46; }
-.connection-badge.online .dot { background-color: #10b981; }
-.connection-badge.offline { background-color: #fee2e2; color: #991b1b; }
-.connection-badge.offline .dot { background-color: #ef4444; }
-
-.btn-evento-significativo {
-  background-color: #3b82f6; border: 1px solid #cbd5e1; color: white;
-  padding: 6px 14px; border-radius: 8px; font-size: 12px; font-weight: 600;
-  cursor: pointer; transition: all 0.2s; height: 32px; box-sizing: border-box;
-}
-.btn-evento-significativo:hover { background-color: #f8fafc; border-color: #94a3b8; }
-
-/* =========================================
-   BARRA DE CLIENTES
-========================================= */
+/* BARRA DE CLIENTES */
 .client-data-card {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -106,16 +61,14 @@
   border-color: #3b82f6;
 }
 
-/* =========================================
-   PANEL CENTRAL GRIDS
-========================================= */
+/*  PANEL CENTRAL GRIDS  */
 .facturacion-main-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
 }
 @media (min-width: 1200px) {
-  .facturacion-main-grid { grid-template-columns: 1.3fr 1.1fr; } /* Panel de búsqueda un poco más ancho */
+  .facturacion-main-grid { grid-template-columns: 1.3fr 1.1fr; } 
 }
 
 .facturacion-card {
@@ -134,17 +87,6 @@
 }
 .product-search-input:focus { border-color: #3b82f6; }
 
-.search-toggle-btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-  height: 40px; padding: 0 14px; border-radius: 8px; font-size: 13px; font-weight: 600;
-  cursor: pointer; border: 1px solid transparent; box-sizing: border-box; white-space: nowrap;
-}
-.search-toggle-btn svg { width: 16px; height: 16px; }
-.search-toggle-btn.gray-btn { background-color: #f1f5f9; color: #475569; border-color: #e2e8f0; }
-.search-toggle-btn.gray-btn.active { background-color: #475569; color: #ffffff; }
-.search-toggle-btn.red-btn { background-color: #fef2f2; color: #ef4444; border-color: #fee2e2; }
-.search-toggle-btn.red-btn.active { background-color: #ef4444; color: #ffffff; }
-
 /* Placeholders de búsqueda */
 .empty-search-placeholder {
   border: 2px dashed #e2e8f0; border-radius: 8px; padding: 40px 20px;
@@ -152,9 +94,7 @@
 }
 .no-products-found { text-align: center; color: #64748b; padding: 20px; font-size: 14px; }
 
-/* =========================================
-   TABLA COMPACTA DE BÚSQUEDA (NUEVO)
-========================================= */
+/* TABLA COMPACTA DE BÚSQUEDA */
 .compact-table-container {
   max-height: 400px;
   overflow-y: auto;
@@ -202,9 +142,7 @@
   color: #0f172a;
 }
 
-/* =========================================
-   RESUMEN TABLA Y ACCIONES INTERACTIVAS
-========================================= */
+/* RESUMEN TABLA Y ACCIONES INTERACTIVAS  */
 .summary-table-wrapper {
   max-height: 320px; overflow-y: auto; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 16px;
 }
