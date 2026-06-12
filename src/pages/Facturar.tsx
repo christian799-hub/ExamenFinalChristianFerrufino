@@ -180,6 +180,8 @@ export default function Facturar() {
           {/* PANEL IZQUIERDO */}
           <div className="facturacion-card left-panel">
             <h3 className="panel-title">Búsqueda de Artículos</h3>
+
+            {errorProductos}
             
             <div className="search-control-wrapper">
               <input type="text" className="product-search-input" placeholder= "Buscar por nombre" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />

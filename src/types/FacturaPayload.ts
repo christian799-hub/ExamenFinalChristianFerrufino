@@ -1,4 +1,8 @@
 export interface FacturarPayload {
+
+  accion?: 'crear' | 'modificar' | 'anular'; 
+  id?: number;
+
   cliente: {
     nit: string;
     razonSocial: string;
