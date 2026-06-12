@@ -1,8 +1,11 @@
-// src/pages/Login.jsx
+import logoFerreteria from '../assets/Logo2.png'; 
+
+
 const Menu = () => {
   return (
-    <div style={{ padding: '50px', textAlign: 'center', backgroundColor: '#f0f0f0', height: '100vh' }}>
-      <h1>Menu temporal</h1>
+    <div className='card'>
+      <h1>Sistema de facturacion Ferreteria America</h1>
+      {logoFerreteria}
     </div>
   );
 };
