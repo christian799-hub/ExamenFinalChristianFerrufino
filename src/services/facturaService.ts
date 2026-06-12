@@ -1,18 +1,19 @@
-import type { FacturaResponse } from '../types/responses'
+import type { FacturaResponse } from '../types/responses';
 import type { FacturarPayload } from '../types/FacturaPayload';
 
-const API_URL = 'http://localhost/api/crud_factura.php';
+const API_URL = 'https://backendexamentecweb2.onrender.com/crud_factura.php';
 
 export const facturaService = {
   crear: async (payload: FacturarPayload): Promise<FacturaResponse> => {
+    // Agregamos la acción por consistencia
     const dataConAccion = { ...payload, accion: 'crear' };
 
     const response = await fetch(API_URL, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
-        body: JSON.stringify(dataConAccion),
-      }
+        'Content-Type': 'application/json'
+      }, // <--- CORRECCIÓN 1: Faltaba esta coma
+      body: JSON.stringify(dataConAccion) // <--- CORRECCIÓN 2: Pasamos los datos aquí
     });
 
     return manejarRespuesta(response);

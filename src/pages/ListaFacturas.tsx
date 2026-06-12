@@ -24,7 +24,7 @@ const ListaFacturas = () => {
   useEffect(() => {
     const fetchFacturas = async () => {
 
-        const response = await fetch('http://localhost/api/get_facturas.php');
+        const response = await fetch('https://backendexamentecweb2.onrender.com/get_facturas.php');
         const result = await response.json();
 
         if (result.success) {

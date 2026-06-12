@@ -41,7 +41,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   // Función para iniciar sesión conectada a tu PHP
   const login = async (usuario: string, password: string) => {
     try {
-      const response = await fetch("http://localhost/api/login.php", {
+      const response = await fetch("https://backendexamentecweb2.onrender.com/login.php", {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ usuario, password }),

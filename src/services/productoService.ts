@@ -4,7 +4,7 @@ import type { ApiResponse } from '../types/responses';
 
 export const productoService = {
   getAll: async (): Promise<ApiResponse<Producto[]>> => {
-    const response = await fetch(`http://localhost/api/get_productos.php`);
+    const response = await fetch(`https://backendexamentecweb2.onrender.com/get_productos.php`);
     
     const rawText = await response.text();
     
